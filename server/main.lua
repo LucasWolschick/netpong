@@ -53,9 +53,9 @@ local updateLoop = coroutine.wrap(function()
         lastFrame = os.clock()
         accum = accum + dt
 
-        while accum > 1 / 20 do
-            update(1 / 20)
-            accum = accum - 1 / 20
+        while accum > SERVER_RATE do
+            update(SERVER_RATE)
+            accum = accum - SERVER_RATE
         end
 
         coroutine.yield()

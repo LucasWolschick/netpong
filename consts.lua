@@ -4,11 +4,11 @@ PADDLE_HEIGHT = 100
 PADDLE_WIDTH = 5
 PADDLE_SPEED = 200
 BALL_RADIUS = 8
-BALL_SPEED = 100
+BALL_SPEED = 600
 PORT = 6789
-
 STATE_WAITING_PLAYERS = 0
 STATE_PLAYING = 1
+SERVER_RATE = 1 / 50
 
 function string.split(s, pattern)
     if pattern == nil then
