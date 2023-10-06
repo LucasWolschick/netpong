@@ -28,9 +28,10 @@ function listen()
     end
 end
 
-function love.load()
+function love.load(arg)
+    local ip = arg[1] or "*"
     client = enet.host_create()
-    server = client:connect("*:" .. PORT)
+    server = client:connect(ip .. ":" .. PORT)
 end
 
 function love.update(dt)
@@ -51,7 +52,9 @@ function love.update(dt)
         end
 
         -- update world
-        state.physics(world, dt)
+        if world.state == STATE_PLAYING then
+            state.physics(world, dt)
+        end
     end
 end
 
